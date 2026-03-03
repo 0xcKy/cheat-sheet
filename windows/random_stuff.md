@@ -11,3 +11,8 @@ Show current processes with PID and PPID
 ```
 Get-CimInstance Win32_Process | Select-Object Name, ProcessId, ParentProcessId
 ```
+ICMP scan using Test-NetConnection, returning active (True) connections only
+```
+$hosts = @("HOST01", "HOST02") #array of computers to test
+foreach ($i in $hosts) {$temp = Test-NetConnection -ComputerName $i -InformationLevel Quiet -WarningAction SilentlyContinue; if ($temp){echo "[+] $i connection is active ($temp) [+]"}}
+```
