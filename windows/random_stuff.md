@@ -22,3 +22,10 @@ $cred = Get-Credential #optional because param -Credential can be used without a
 $psDrive = New-PSDrive -Name MyRemoteDrive -PSProvider FileSystem -Root '\\PC_NAME\C$' -Credential $cred
 Remove-PSDrive -Name MyRemoteDrive #use to disconnect
 ```
+Query logged in users, and logoff selected one. ("ID" is the Session ID for the user.)
+```
+quser
+```
+```
+logoff ID
+```
